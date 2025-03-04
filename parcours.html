@@ -311,8 +311,8 @@ Led the digital communication strategy for Game Fair, Europe’s largest hunting
                           <a href="images/M2.png" target="_blank">List of courses studied »</a>
 
                           <div class="dropdown">
-                            <a onclick="toggleDropdown()">Career opportunities »</a>
-                            <div id="dropdownContent" class="dropdown-content">
+  <a onclick="toggleDropdown('dropdownMS2')">Career opportunities »</a>
+  <div id="dropdownMS2" class="dropdown-content">
                                 <ul>
                                   Data Management & Analytics:
                                   <li>Data Analyst</li>
@@ -372,8 +372,8 @@ Led the digital communication strategy for Game Fair, Europe’s largest hunting
                           <a href="images/M1.png" target="_blank">List of courses studied »</a>
 
                           <div class="dropdown">
-                            <a onclick="toggleDropdown('dropdownMS')">Career opportunities »</a>
-                            <div id="dropdownMS" class="dropdown-content">
+  <a onclick="toggleDropdown('dropdownMS1')">Career opportunities »</a>
+  <div id="dropdownMS1" class="dropdown-content">
                                 <ul>
                                   Marketing Strategy & Product Management
                                   <li>Marketing Manager</li>
@@ -577,16 +577,28 @@ Led the digital communication strategy for Game Fair, Europe’s largest hunting
       </div>
     </footer>
     
-    <script>
-    function toggleDropdown() {
-        var content = document.getElementById("dropdownContent");
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    }
-  </script>
+   <script>
+  function toggleDropdown(id) {
+      var dropdown = document.getElementById(id);
+      // Fermer tous les dropdowns avant d'ouvrir le bon
+      document.querySelectorAll('.dropdown-content').forEach(function(el) {
+          if (el.id !== id) el.style.display = "none";
+      });
+      // Alterner l'affichage du dropdown sélectionné
+      dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+  }
+
+  // Fermer les dropdowns si on clique en dehors
+  window.onclick = function(event) {
+      if (!event.target.matches('.dropdown a')) {
+          document.querySelectorAll('.dropdown-content').forEach(function(el) {
+              el.style.display = "none";
+          });
+      }
+  };
+</script>
+
+    
 
   </body>
 </html>
