@@ -96,20 +96,21 @@
                 <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-sm u-valign-bottom-xs u-container-layout-2">
                   <h2 class="u-align-left u-text u-text-1"> Cybersecurity & Data Science – Sorbonne Data Challenge 2025 </h2>
                   <p class="u-align-justify u-text u-text-2">  This project was conducted during the 2025 edition of the Sorbonne Data Challenge, in collaboration with the French Ministry of the Interior’s Cyber Command (COMCYBER). The goal was to detect malicious behaviors in Windows executables by analyzing assembler instructions extracted from their binary files.
+<p class="u-text">
+          <strong>Methodology :</strong>
+          We designed a complete multi-label classification pipeline:<br>
+          <ul>
+            <li>Feature Extraction: Binary vectorization of instructions and sub-instructions parsed from structured JSON files.</li>
+            <li>Feature Engineering: Creation of over 1,260 binary variables based on frequency analysis.</li>
+            <li>Modeling: We tested several algorithms — Random Forest, LightGBM, and XGBoost.</li>
+            <li>Final Choice: XGBoost was selected for its robustness, ability to handle imbalanced datasets, and interpretability through SHAP analysis.</li>
+          </ul>
+          <strong>Results :</strong>     
+          <ul>
+          <li>Our best-performing model, XGBoost, achieved a 51% Macro-F1 score, validating the efficiency of a handcrafted feature approach combined with powerful gradient boosting techniques. The project balanced technical performance with explainability — a critical aspect in cybersecurity.</li>
+          </ul>
+          </p>
 
-Methodology<br>
-We designed a complete multi-label classification pipeline:<br>
-
-Feature Extraction: Binary vectorization of instructions and sub-instructions parsed from structured JSON files.<br>
-
-Feature Engineering: Creation of over 1,260 binary variables based on frequency analysis.<br>
-
-Modeling: We tested several algorithms — Random Forest, LightGBM, and XGBoost.<br>
-
-Final Choice: XGBoost was selected for its robustness, ability to handle imbalanced datasets, and interpretability through SHAP analysis.<br>
-
-Results<br>
-Our best-performing model, XGBoost, achieved a 51% Macro-F1 score, validating the efficiency of a handcrafted feature approach combined with powerful gradient boosting techniques. The project balanced technical performance with explainability — a critical aspect in cybersecurity.<br>
                   </p>
                   <a href="https://github.com/josyine/analyse" target="_blank" class="u-border-2 u-border-custom-color-6 u-btn u-btn-round u-button-style u-custom-color-6 u-file-link u-radius u-text-hover-white u-btn-1">Dépôt GitHub </a>
                   <a href="../files/analyse.pdf" target="_blank" class="u-border-2 u-border-custom-color-6 u-btn u-btn-round u-button-style u-custom-color-6 u-file-link u-radius u-text-hover-white u-btn-2">Rapport </a>
